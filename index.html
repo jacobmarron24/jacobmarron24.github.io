@@ -1,3 +1,4 @@
+<!-- HTML: saelidesigns.com -->
 <!doctype html>
 <html lang="en-US">
 <head>
@@ -8,58 +9,102 @@
 <meta name="keywords" content="fashion design, fashion illustration, fashion photography">
 <meta name="author" content="Ashley Saeli">
 <title>Saeli Designs | Fashion Designs by Ashley Saeli</title>
-<link rel="stylesheet" type="text/css" href="saelidesigns_stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 
-<!-- -------------------- -->
-
+<!-- BODY -->
 <body>
-<!-- MAIN CONTAINER -->
-<div class="container">
 
 <!-- HEADER -->
-<header>
-<a href="saelidesigns.html">
-<h1 class="logo">Saeli Designs</h1></a>
-
-<!-- NAVIGATION -->
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="story.html">Story</a></li>
-<li class="dropdown">
-<a href="#" class="dropdown-button">Portfolio</a>
-<div class="dropdown-content">
-<div><a href="portfolio/garments.html">Garments</a></div>
-<div><a href="portfolio/illustrations.html" >Illustrations</a></div>
-<div><a href="portfolio/fashionphotos.html" >Fashion Photography</a></div>
-</li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
-
-<!-- IMAGE SLIDER -->
-
-<!-- Insert image slideshow here with two images from each content page (Garments, Illustrations, & Fashion Photography)
-be sure to include a link leading to each selection with visual hover styles -->
-
-<!-- HOME DESCRIPTION -->
-
-<div class="body">
-<h2>My Story</h2>
-<!-- Insert partial "My Story" description here with link to full page -->
-<br>
-<a href="saelidesigns.com/my_story" ...>Read more...</a>
+<div class="header">
+	<a href="saelidesigns.html"><h1 class="logo">Saeli Designs</h1></a>
+	<nav>
+		<ul>
+			<li><a class="active" href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropbtn">Portfolio</a>
+				<div class="dropdown-content">
+					<div><a href="garments.html">Garments</a></div>
+					<div><a href="illustrations.html">Illustrations</a></div>
+					<div><a href="fashion-photography.html">Fashion Photography</a></div>
+				</div>
+			</li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+	</nav>
 </div>
+<!-- /HEADER -->
+
+<!-- SLIDESHOW -->
+<div class="slideshow-container"">
+	<img class="slide" src="garments/slideshow-2.jpg" style="width:100%">
+	<img class="slide" src="garments/slideshow-1.jpg" style="width:100%">
+	<img class="slide" src="illustrations/illustration-1.jpg" style="width:100%">
+	<div class="slide-control">
+		<div class="left-control" onclick="plusDivs(-1)">&#10094;</div>
+		<div class="right-control" onclick="plusDivs(1)">&#10095;</div>
+		<span class="center-control demo" onclick="currentDiv(1)"></span>
+		<span class="center-control demo" onclick="currentDiv(2)"></span>
+		<span class="center-control demo" onclick="currentDiv(3)"></span>
+	</div>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("slide");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" active-slide", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active-slide";
+}
+</script>
+<!-- /SLIDESHOW -->
+
+<!-- IMAGE MENU -->
+<div class="image-menu-container">
+	<div class="image-menu">
+		<span class="med"><a href="illustrations.html"><img src="illustrations/illustration-1.jpg"/></a></span>
+		<span class="med"><a href="illustrations.html"><img src="illustrations/illustration-5.jpg"/></a></span>
+		<span class="med"><a href="illustrations.html"><img src="illustrations/illustration-3.jpg"/></a></span>
+		<br class="large-br">
+		<span class="med"><a href="fashion-photgraphy.html"><img src="fashion-photography/fash-photo-3.jpg"/></a></span>
+		<span class="med"><a href="fashion-photgraphy.html"><img src="fashion-photography/fash-photo-5.jpg"/></a></span>
+		<span class="med"><a href="fashion-photgraphy.html"><img src="fashion-photography/fash-photo-2.jpg"/></a></span>
+	</div>
+</div>
+<!-- /IMAGE MENU -->
 
 <!-- FOOTER -->
-
-<!-- Structure and style footer to be laid out horizontally with no line wrapping -->
-<footer>
-<span>Copyright 2016 Saeli Designs</span>
-<span>Email: asaeli@kent.edu</span>
-</footer>
+<div class="footer-container"> 
+	<div class="footer">
+		<span>Email: <a class="link" "href="mailto:asaeli@kent.edu">asaeli@kent.edu</a></span>
+		<span class="copyright">Copyright &copy; 2016 Ashley Saeli</span>
+	</div>
 </div>
+<!-- /FOOTER -->
+
 </body>
+<!-- /BODY -->
+
 </html>
+<!-- /HTML: saelidesigns.com -->
