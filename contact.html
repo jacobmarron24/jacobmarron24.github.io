@@ -1,0 +1,93 @@
+<!-- HTML: saelidesigns.com -->
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fashion designs, garments, illustrations, and photography by Ashley Saeli">
+<meta name="keywords" content="fashion design, fashion illustration, fashion photography">
+<meta name="author" content="Ashley Saeli">
+<title>Saeli Designs | Fashion Designs by Ashley Saeli</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<!-- BODY -->
+<body>
+
+<!-- HEADER -->
+<div class="header">
+	<a href="saelidesigns.html"><h1 class="logo">Saeli Designs</h1></a>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropbtn">Portfolio</a>
+				<div class="dropdown-content">
+					<div><a href="garments.html">Garments</a></div>
+					<div><a href="illustrations.html">Illustrations</a></div>
+					<div><a href="fashion-photography.html">Fashion Photography</a></div>
+				</div>
+			</li>
+			<li><a class="active" href="contact.html">Contact</a></li>
+		</ul>
+	</nav>
+</div>
+<!-- /HEADER -->
+
+
+<!-- CONTACT -->
+<?php
+$action=$_REQUEST['action'];
+if ($action=="")    /* display the contact form */
+    {
+    ?>
+    <form  action="" method="POST" enctype="multipart/form-data">
+	    <input type="hidden" name="action" value="submit">
+		<br>
+	    <input name="name" type="text" value="" size="30" placeholder="Name"/><br>
+		<br>
+	    <input name="email" type="text" value="" size="30" placeholder="Email"/><br>
+		<br>
+		<input name="subject" type="text" value="" size="30" placeholder="Subject"/><br>
+		<br>
+	    <textarea name="message" rows="7" cols="30" placeholder="Message"></textarea><br>
+	    <br>
+	    <input id="contact-submit" type="submit" value="SEND EMAIL"/>
+    </form>
+<?php
+    } 
+else                /* send the submitted data */
+    {
+    $name=$_REQUEST['name'];
+    $email=$_REQUEST['email'];
+    $subject=$_REQUEST['subject'];
+    $message=$_REQUEST['message'];
+    if (($name=="")||($email=="")||($message==""))
+        {
+        echo "All fields are required, please fill the form again.";
+        }
+    else{        
+        $from="From: $name<$email>\r\nReturn-path: $email";
+        mail("jacobmarron24@gmail.com", $subject, $message, $from);
+        echo "Email sent!";
+        }
+    }  
+?>
+<!-- CONTACT -->
+
+<!-- FOOTER -->
+<div class="footer-container"> 
+	<div class="footer">
+		<span>Email: <a class="link" "href="mailto:asaeli@kent.edu">asaeli@kent.edu</a></span>
+		<span class="copyright">Copyright &copy; 2016 Ashley Saeli</span>
+	</div>
+</div>
+<!-- /FOOTER -->
+
+</body>
+<!-- /BODY -->
+
+</html>
+<!-- /HTML: saelidesigns.com -->
