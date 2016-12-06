@@ -17,7 +17,7 @@
 
 <!-- HEADER -->
 <div class="header">
-	<a href="saelidesigns.html"><h1 class="logo">Saeli Designs</h1></a>
+	<a href="index.html"><h1 class="logo">Saeli Designs</h1></a>
 	<nav>
 		<ul>
 			<li><a class="active" href="index.html">Home</a></li>
@@ -37,7 +37,7 @@
 <!-- /HEADER -->
 
 <!-- SLIDESHOW -->
-<div class="slideshow-container"">
+<div class="slideshow-container">
 	<img class="slide" src="garments/slideshow-2.jpg" style="width:100%">
 	<img class="slide" src="garments/slideshow-1.jpg" style="width:100%">
 	<img class="slide" src="illustrations/illustration-1.jpg" style="width:100%">
@@ -78,27 +78,30 @@ function showDivs(n) {
   dots[slideIndex-1].className += " active-slide";
 }
 </script>
-<!-- /SLIDESHOW -->
 
-<!-- IMAGE MENU -->
-<div class="image-menu-container">
-	<div class="image-menu">
-		<span class="med"><a href="illustrations.html"><img src="illustrations/illustration-1.jpg"/></a></span>
-		<span class="med"><a href="illustrations.html"><img src="illustrations/illustration-5.jpg"/></a></span>
-		<span class="med"><a href="illustrations.html"><img src="illustrations/illustration-3.jpg"/></a></span>
-		<br class="large-br">
-		<span class="med"><a href="fashion-photgraphy.html"><img src="fashion-photography/fash-photo-3.jpg"/></a></span>
-		<span class="med"><a href="fashion-photgraphy.html"><img src="fashion-photography/fash-photo-5.jpg"/></a></span>
-		<span class="med"><a href="fashion-photgraphy.html"><img src="fashion-photography/fash-photo-2.jpg"/></a></span>
-	</div>
-</div>
-<!-- /IMAGE MENU -->
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+}
+</script>
+<!-- /SLIDESHOW -->
 
 <!-- FOOTER -->
 <div class="footer-container"> 
 	<div class="footer">
-		<span>Email: <a class="link" "href="mailto:asaeli@kent.edu">asaeli@kent.edu</a></span>
-		<span class="copyright">Copyright &copy; 2016 Ashley Saeli</span>
+		<div>Email: <a class="link" href="mailto:asaeli@kent.edu">asaeli@kent.edu</a></div>
+		<div class="copyright">Copyright &copy; 2016 Ashley Saeli</div>
 	</div>
 </div>
 <!-- /FOOTER -->
