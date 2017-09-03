@@ -1,0 +1,140 @@
+<!-- HTML: saelidesigns.com -->
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fashion designs, garments, illustrations, and photography by Ashley Saeli">
+<meta name="keywords" content="fashion design, fashion illustration, fashion photography">
+<meta name="author" content="Ashley Saeli">
+<title>Saeli Designs | Fashion Designs by Ashley Saeli</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<!-- BODY -->
+<body>
+
+<!-- HEADER -->
+<div class="header">
+	<a href="index.html"><h1 class="logo">Saeli Designs</h1></a>
+	<nav>
+		<ul>
+			<li><a class="active" href="index.html">HOME</a></li>
+			<li><a href="about.html">ABOUT</a></li>
+			<li class="dropdown">
+				<a href="garments.html" class="dropbtn">GARMENTS</a>
+				<!--div class="dropdown-content">
+					<div><a href="#">Garment 1</a></div>
+					<div><a href="#">Garment 2</a></div>
+					<div><a href="#">Garment 3</a></div>
+				</div-->
+			</li>
+			<li class="dropdown">
+				<a href="illustrations.html" class="dropbtn">ILLUSTRATIONS</a>
+				<!--div class="dropdown-content">
+					<div><a href="#">Illustration 1</a></div>
+					<div><a href="#">Illustration 2</a></div>
+					<div><a href="#">Illustration 3</a></div>
+				</div-->
+			</li>
+			<li><a href="blog/blog-entry1.html">BLOG</a></li>
+		</ul>
+	</nav>
+</div>
+<!-- /HEADER -->
+
+<!-- SLIDESHOW -->
+<div class="slideshow-container">
+
+<div class="w3-content" style="max-width:1200px">
+  <img class="mySlides" src="garments/slideshow1.jpg" style="width:100%">
+  <img class="mySlides" src="garments/slideshow2.jpg" style="width:100%">
+  <img class="mySlides" src="garments/slideshow3.jpg" style="width:100%">
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="garments/slideshow1.jpg" style="width:100%" onclick="currentDiv(1)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="garments/slideshow2.jpg" style="width:100%" onclick="currentDiv(2)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="garments/slideshow3.jpg" style="width:100%" onclick="currentDiv(3)">
+    </div>
+  </div>
+</div>
+
+<script>
+	$(document).ready(function() {
+
+  var active1 = false;
+  var active2 = false;
+  var active3 = false;
+  var active4 = false;
+
+    $('.parent2').on('mousedown touchstart', function() {
+    
+    if (!active1) $(this).find('.test1').css({'background-color': 'gray', 'transform': 'translate(0px,125px)'});
+    else $(this).find('.test1').css({'background-color': 'dimGray', 'transform': 'none'}); 
+     if (!active2) $(this).find('.test2').css({'background-color': 'gray', 'transform': 'translate(60px,105px)'});
+    else $(this).find('.test2').css({'background-color': 'darkGray', 'transform': 'none'});
+      if (!active3) $(this).find('.test3').css({'background-color': 'gray', 'transform': 'translate(105px,60px)'});
+    else $(this).find('.test3').css({'background-color': 'silver', 'transform': 'none'});
+      if (!active4) $(this).find('.test4').css({'background-color': 'gray', 'transform': 'translate(125px,0px)'});
+    else $(this).find('.test4').css({'background-color': 'silver', 'transform': 'none'});
+    active1 = !active1;
+    active2 = !active2;
+    active3 = !active3;
+    active4 = !active4;
+      
+    });
+});
+</script>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+</script>
+
+</div>
+<!-- /SLIDESHOW -->
+
+<!-- FOOTER >
+<div class="footer-container"> 
+	<div class="footer">
+		<span>email: <a class="link">asaeli@kent.edu</a></span>
+		<span class="copyright">copyright &copy; 2017 ASHLEY SAELI</span>
+	</div>
+</div>
+<!-- /FOOTER -->
+
+</body>
+<!-- /BODY -->
+
+</html>
+<!-- /HTML: saelidesigns.com -->
