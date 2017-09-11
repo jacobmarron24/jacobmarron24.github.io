@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: header;
-    src: url(fonts/engebrechtre.ttf);
+    src: url(fonts/lmroman10-bold.otf);
 }
 
 @font-face {
@@ -456,4 +456,14 @@ color: #a3e4d7;
 .blog-nav:hover {
 	opacity: 1.0;
 	text-decoration: none;
+}
+.collection-container {
+	margin: 5%;
+	background-color: #333333;
+	padding: 1% 3% 2%;
+	border-radius: 5px;
+	text-align: center;
+}
+.collection-container h1 {
+	text-align: center;
 }
